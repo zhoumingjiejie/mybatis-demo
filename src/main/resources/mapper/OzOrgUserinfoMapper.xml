@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.zero.mybatisdemo.mapper.OzOrgUserinfoMapper">
+
+    <resultMap id="OzOrgUserinfo" type="com.example.zero.mybatisdemo.entity.OzOrgUserinfo">
+        <result column="ID" property="iD"/>
+        <result column="OUINFO_ID" property="oUINFOID"/>
+        <result column="NAME" property="nAME"/>
+        <result column="NAME_PINYIN" property="nAMEPINYIN"/>
+        <result column="LOGIN_NAME" property="lOGINNAME"/>
+        <result column="USERINFO_TITLE" property="uSERINFOTITLE"/>
+        <result column="ORDER_NO" property="oRDERNO"/>
+        <result column="STATUS" property="sTATUS"/>
+        <result column="IS_DEFAULT" property="iSDEFAULT"/>
+        <result column="JOBTITLE_ID" property="jOBTITLEID"/>
+        <result column="JOBLEVEL_ID" property="jOBLEVELID"/>
+        <result column="MOBILE" property="mOBILE"/>
+        <result column="TELEPHONE" property="tELEPHONE"/>
+        <result column="EMAIL" property="eMAIL"/>
+        <result column="HOMENO" property="hOMENO"/>
+        <result column="FAXNO" property="fAXNO"/>
+        <result column="ADDRESS" property="aDDRESS"/>
+        <result column="ZIP_CODE" property="zIPCODE"/>
+        <result column="OFFICE" property="oFFICE"/>
+        <result column="CARD_ID" property="cARDID"/>
+        <result column="GENDER" property="gENDER"/>
+        <result column="BIRTHDAY" property="bIRTHDAY"/>
+        <result column="WORK_DATE" property="wORKDATE"/>
+        <result column="EMPLOYER_ID" property="eMPLOYERID"/>
+        <result column="EMPLOYED_DATE" property="eMPLOYEDDATE"/>
+        <result column="MEMOS" property="mEMOS"/>
+        <result column="THIRD_ID" property="tHIRDID"/>
+        <result column="SUPERIOR" property="sUPERIOR"/>
+        <result column="DDH" property="dDH"/>
+        <result column="WEIXINH" property="wEIXINH"/>
+        <result column="QQH" property="qQH"/>
+        <result column="AVATAR" property="aVATAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `ID`,
+        `OUINFO_ID`,
+        `NAME`,
+        `NAME_PINYIN`,
+        `LOGIN_NAME`,
+        `USERINFO_TITLE`,
+        `ORDER_NO`,
+        `STATUS`,
+        `IS_DEFAULT`,
+        `JOBTITLE_ID`,
+        `JOBLEVEL_ID`,
+        `MOBILE`,
+        `TELEPHONE`,
+        `EMAIL`,
+        `HOMENO`,
+        `FAXNO`,
+        `ADDRESS`,
+        `ZIP_CODE`,
+        `OFFICE`,
+        `CARD_ID`,
+        `GENDER`,
+        `BIRTHDAY`,
+        `WORK_DATE`,
+        `EMPLOYER_ID`,
+        `EMPLOYED_DATE`,
+        `MEMOS`,
+        `THIRD_ID`,
+        `SUPERIOR`,
+        `DDH`,
+        `WEIXINH`,
+        `QQH`,
+        `AVATAR`
+    </sql>
+
+    <insert id="insert" parameterType="java.util.Map">
+        INSERT INTO oz_org_userinfo (`ID`,
+                                     `OUINFO_ID`,
+                                     `NAME`,
+                                     `NAME_PINYIN`,
+                                     `LOGIN_NAME`,
+                                     `USERINFO_TITLE`,
+                                     `ORDER_NO`,
+                                     `STATUS`,
+                                     `IS_DEFAULT`,
+                                     `JOBTITLE_ID`,
+                                     `JOBLEVEL_ID`,
+                                     `MOBILE`,
+                                     `TELEPHONE`,
+                                     `EMAIL`,
+                                     `HOMENO`,
+                                     `FAXNO`,
+                                     `ADDRESS`,
+                                     `ZIP_CODE`,
+                                     `OFFICE`,
+                                     `CARD_ID`,
+                                     `GENDER`,
+                                     `BIRTHDAY`,
+                                     `WORK_DATE`,
+                                     `EMPLOYER_ID`,
+                                     `EMPLOYED_DATE`,
+                                     `MEMOS`,
+                                     `THIRD_ID`,
+                                     `SUPERIOR`,
+                                     `DDH`,
+                                     `WEIXINH`,
+                                     `QQH`,
+                                     `AVATAR`)
+        VALUES (#{ozOrgUserinfo.iD},
+                #{ozOrgUserinfo.oUINFOID},
+                #{ozOrgUserinfo.nAME},
+                #{ozOrgUserinfo.nAMEPINYIN},
+                #{ozOrgUserinfo.lOGINNAME},
+                #{ozOrgUserinfo.uSERINFOTITLE},
+                #{ozOrgUserinfo.oRDERNO},
+                #{ozOrgUserinfo.sTATUS},
+                #{ozOrgUserinfo.iSDEFAULT},
+                #{ozOrgUserinfo.jOBTITLEID},
+                #{ozOrgUserinfo.jOBLEVELID},
+                #{ozOrgUserinfo.mOBILE},
+                #{ozOrgUserinfo.tELEPHONE},
+                #{ozOrgUserinfo.eMAIL},
+                #{ozOrgUserinfo.hOMENO},
+                #{ozOrgUserinfo.fAXNO},
+                #{ozOrgUserinfo.aDDRESS},
+                #{ozOrgUserinfo.zIPCODE},
+                #{ozOrgUserinfo.oFFICE},
+                #{ozOrgUserinfo.cARDID},
+                #{ozOrgUserinfo.gENDER},
+                #{ozOrgUserinfo.bIRTHDAY},
+                #{ozOrgUserinfo.wORKDATE},
+                #{ozOrgUserinfo.eMPLOYERID},
+                #{ozOrgUserinfo.eMPLOYEDDATE},
+                #{ozOrgUserinfo.mEMOS},
+                #{ozOrgUserinfo.tHIRDID},
+                #{ozOrgUserinfo.sUPERIOR},
+                #{ozOrgUserinfo.dDH},
+                #{ozOrgUserinfo.wEIXINH},
+                #{ozOrgUserinfo.qQH},
+                #{ozOrgUserinfo.aVATAR})
+    </insert>
+
+    <delete id="delete" parameterType="java.util.Map">
+        DELETE
+        FROM oz_org_userinfo
+        WHERE `id` = #{id}
+    </delete>
+
+    <update id="update" parameterType="java.util.Map">
+        UPDATE oz_org_userinfo
+        SET ID             = #{ozOrgUserinfo.iD},
+            OUINFO_ID      = #{ozOrgUserinfo.oUINFOID},
+            NAME           = #{ozOrgUserinfo.nAME},
+            NAME_PINYIN    = #{ozOrgUserinfo.nAMEPINYIN},
+            LOGIN_NAME     = #{ozOrgUserinfo.lOGINNAME},
+            USERINFO_TITLE = #{ozOrgUserinfo.uSERINFOTITLE},
+            ORDER_NO       = #{ozOrgUserinfo.oRDERNO},
+            STATUS         = #{ozOrgUserinfo.sTATUS},
+            IS_DEFAULT     = #{ozOrgUserinfo.iSDEFAULT},
+            JOBTITLE_ID    = #{ozOrgUserinfo.jOBTITLEID},
+            JOBLEVEL_ID    = #{ozOrgUserinfo.jOBLEVELID},
+            MOBILE         = #{ozOrgUserinfo.mOBILE},
+            TELEPHONE      = #{ozOrgUserinfo.tELEPHONE},
+            EMAIL          = #{ozOrgUserinfo.eMAIL},
+            HOMENO         = #{ozOrgUserinfo.hOMENO},
+            FAXNO          = #{ozOrgUserinfo.fAXNO},
+            ADDRESS        = #{ozOrgUserinfo.aDDRESS},
+            ZIP_CODE       = #{ozOrgUserinfo.zIPCODE},
+            OFFICE         = #{ozOrgUserinfo.oFFICE},
+            CARD_ID        = #{ozOrgUserinfo.cARDID},
+            GENDER         = #{ozOrgUserinfo.gENDER},
+            BIRTHDAY       = #{ozOrgUserinfo.bIRTHDAY},
+            WORK_DATE      = #{ozOrgUserinfo.wORKDATE},
+            EMPLOYER_ID    = #{ozOrgUserinfo.eMPLOYERID},
+            EMPLOYED_DATE  = #{ozOrgUserinfo.eMPLOYEDDATE},
+            MEMOS          = #{ozOrgUserinfo.mEMOS},
+            THIRD_ID       = #{ozOrgUserinfo.tHIRDID},
+            SUPERIOR       = #{ozOrgUserinfo.sUPERIOR},
+            DDH            = #{ozOrgUserinfo.dDH},
+            WEIXINH        = #{ozOrgUserinfo.wEIXINH},
+            QQH            = #{ozOrgUserinfo.qQH},
+            AVATAR         = #{ozOrgUserinfo.aVATAR},
+            UpdateTime     = NOW()
+        WHERE `id` = #{ozOrgUserinfo.id}
+    </update>
+
+
+    <select id="load" parameterType="java.util.Map" resultMap="OzOrgUserinfo">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM oz_org_userinfo
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="pageList" parameterType="java.util.Map" resultMap="OzOrgUserinfo">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM oz_org_userinfo
+        LIMIT #{offset}, #{pagesize}
+    </select>
+
+    <select id="pageListCount" parameterType="java.util.Map" resultType="int">
+        SELECT count(1)
+        FROM oz_org_userinfo
+    </select>
+
+</mapper>
